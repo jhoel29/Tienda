@@ -82,4 +82,13 @@ public class PruebasController {
         return "/pruebas/listado2";
     }
 
+    @PostMapping("/consultaNombreCategoria")
+    public String consultaNombreCategoria(@RequestParam String nombre,
+            @RequestParam Long idCategoria,
+            Model model) {
+        var productos = productoService.buscarPorNombreYCategoria(nombre, idCategoria);
+        model.addAttribute("productos", productos);
+        return "/pruebas/listado"; // o tu vista de resultados
+    }
+
 }

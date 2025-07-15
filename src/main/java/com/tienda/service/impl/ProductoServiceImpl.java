@@ -61,4 +61,9 @@ public class ProductoServiceImpl implements ProductoService {
         return productoDao.metodoNativo(precioInf, precioSup);
     }
 
+    @Override
+    public List<Producto> buscarPorNombreYCategoria(String nombre, Long idCategoria) {
+        return productoDao.buscarPorNombreYCategoria(nombre, idCategoria);
+    }
+
 }
